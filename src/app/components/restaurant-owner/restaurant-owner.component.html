@@ -1,0 +1,39 @@
+<mat-tab-group class="mx-4">
+  <mat-tab label="Restaurants">
+      <mat-tab-group>
+          <mat-tab label="View Restaurants">
+            <div class="m-3" >
+              <table class="table">
+                  <thead>
+                  <tr>
+                      <th >Restaurant Id</th>
+                      <th></th>
+                      <th >Name</th>
+                      <th></th>
+                      <th ></th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let u of restaurant;let i= index;">
+                      <td >{{u.id}}</td>
+                      <td >
+                        <img src={{u.restSrc}} class="img-restaurant-list" alt="idli">
+                      </td>
+                      <td>{{u.name}}</td>
+                      <td>
+                          <button class="btn btn-dark" (click)="viewRestaurant(u.id)">View Details</button>
+                      </td>
+                      <td>
+                          <button class="btn btn-danger" (click)="deleteRestaurant(u.id)">Delete</button>
+                      </td>
+                  </tr>
+                  </tbody>
+              </table>
+            </div>
+          </mat-tab>
+          <mat-tab label="Update Restaurants">
+              <app-update-restaurant></app-update-restaurant>
+          </mat-tab>
+      </mat-tab-group>
+  </mat-tab>
+</mat-tab-group>

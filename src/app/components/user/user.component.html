@@ -1,0 +1,51 @@
+<div class="m-3 d-flex justify-content-center">
+    <table class="table" style="width: auto;">
+        <thead>
+        <tr>
+            <th scope="col">User Id</th>
+            <th scope="col">Name</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let u of arrUsers;" >
+            <th scope="row">{{u.id}}</th>
+            <td >{{u.firstName}} {{u.lastName}}</td>
+            
+            <td>
+                <button class="btn btn-dark m-2 shadow" (click)="viewUser(u.id)">View Details</button>
+                <button class="btn btn-dark m-2" [appConfirmDialog]="u.id" componentName="user">Delete</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="m-3 d-flex justify-content-center">
+    <form [formGroup]="patternForm" (ngSubmit)="onSubmit(patternForm.value)" class="form d-flex ">
+        <div class="m-2">
+            <input id="name-pattern" type="text" formControlName="namePattern" class="form-control"/>
+        </div>
+        <div class="m-2">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        
+    </form>
+    
+</div>
+<div class="m-3 d-flex justify-content-center">
+    <table class="table" style="width: auto;">
+        <thead>
+        <tr>
+            <th scope="col">User Id</th>
+            <th scope="col">Name</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let u of patternUsers;" >
+            <th scope="row">{{u.id}}</th>
+            <td >{{u.firstName}} {{u.lastName}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

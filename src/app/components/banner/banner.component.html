@@ -1,0 +1,118 @@
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid mx-3">
+        <a class="navbar-brand" [routerLink]="'/'">FOODToORDER</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-lg-flex align-items-center justify-content-between">
+                <div class="d-lg-flex">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" [routerLink]="'/'">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="'/aboutus'">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="'/restaurants'">Restaurants</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="'/admin'">Admin</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="'/owner'">Restaurant Owner</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="'/contactus'">Contact Us</a>
+                    </li>
+                </div>
+                <div class="d-flex">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                        *ngIf="!isLogin()">
+                        Sign In
+                    </button>
+                    <button type="button" class="btn btn-primary mx-2" data-bs-toggle="modal"
+                        data-bs-target="#signUpModal" *ngIf="!isLogin()">
+                        Sign Up
+                    </button>
+
+                    <button type="button" class="btn btn-primary mx-2" (click)="loadCurrentCart()"
+                        data-bs-toggle="modal" data-bs-target="#cartModal" *ngIf="isLogin()">
+                        Cart
+                    </button>
+                    <button type="button" class="btn btn-primary mx-2" (click)="logout()" *ngIf="isLogin()">
+                        Logout
+                    </button>
+                </div>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--Sign in Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header mx-4">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Sign In</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body mx-4">
+                <form [formGroup]="signInForm" (ngSubmit)="onSubmit()" class="form"
+                    [class.error]="!signInForm.valid && signInForm.touched">
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1"
+                            placeholder="name@example.com" formControlName="email" />
+                        <label class="form-label" *ngIf="fc['email'].hasError('required') && fc['email'].touched"
+                            style="color: #e85a4f">Email is required</label>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput2" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="exampleFormControlInput2"
+                            formControlName="password" />
+                        <label class="form-label" *ngIf="
+                fc['password'].hasError('required') && fc['password'].touched
+              " style="color: #e85a4f">Password is required</label>
+                    </div>
+                    <div class="d-flex justify-content-center ">
+                        <button type="button" class="btn btn-secondary m-3" data-bs-dismiss="modal">
+                            Close
+                        </button>
+                        <button type="submit" class="btn btn-secondary m-3">Sign In</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Sign Up Modal -->
+<div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header mx-3">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Sign Up</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body mx-3">
+                <app-sign-up></app-sign-up>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Cart Modal -->
+<div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5 mx-3" id="exampleModalLabel">Cart</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body m-3">
+                <app-current-cart [cartData]="currCart"></app-current-cart>
+            </div>
+        </div>
+    </div>
+</div>

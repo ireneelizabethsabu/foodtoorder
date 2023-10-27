@@ -1,0 +1,51 @@
+#contactus-container{
+    background-color: white;
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.3);
+    filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.3));
+}
+
+#map-frame{
+    width: 100%;
+    min-height: 550px;
+}
+
+#btn_custom{
+    background-color: #8e8d8a !important;
+    width: 100%;
+    color: black;
+}
+
+#message{
+    resize: none;
+}
+.error-label{
+    color: #e85a4f;
+    font-size: small;
+}
+.btn{
+    width: 100px;
+    border: #182978;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: #182978;
+}
+.btn:hover{
+    background-color: #182a78e1;
+}
+
+.form-control:focus{
+    color: #182978;
+    background-color: #acbfe63f;
+    border-color: #6688CC;
+    outline: 0;
+    box-shadow: none;
+}
+
+.form-control{
+    color: #182978;
+    border-color: #6688CC;
+    background-color: transparent;
+}
+h4{
+    color: #182978;
+}

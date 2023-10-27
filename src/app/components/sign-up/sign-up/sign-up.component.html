@@ -1,0 +1,95 @@
+<div >
+<form [formGroup]="signUpForm" (ngSubmit)="onSubmit(signUpForm.value)" class="form" [class.error]="!signUpForm.valid && signUpForm.touched">
+    <div class="row">
+        <div class="mb-2 col" >
+            <label for="firstName" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="firstName" formControlName="firstName" [ngClass]="{ 'is-invalid' : submitted && firstName.errors}">
+            <label class="form-label" *ngIf="!firstName.valid && firstName.touched"  style="color: #e85a4f;">First name is required</label>
+        </div> 
+        <div class="mb-2 col" >
+            <label for="lastName" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="lastName" formControlName="lastName" [ngClass]="{ 'is-invalid' : submitted && lastName.errors}">
+            <label class="form-label" *ngIf="!lastName.valid && lastName.touched" style="color: #e85a4f;">Last name is required</label>
+        </div>  
+    </div>
+    
+    <div class="mb-2">
+        <label for="email" class="form-label" >Email address</label>
+        <input type="email" class="form-control" id="email" placeholder="name@example.com" formControlName="email" [ngClass]="{ 'is-invalid' : submitted && email.errors}">
+        <label class="form-label" *ngIf="!email.valid && email.touched" style="color: #e85a4f;">Email is required</label>
+    </div>
+    <div class="mb-2">
+        <label for="mobileNumber" class="form-label">Mobile Number</label>
+        <input type="text" class="form-control" id="mobileNumber" placeholder="9667856784" formControlName="mobileNumber" [ngClass]="{ 'is-invalid' : submitted && mobileNumber.errors}">
+        <label class="form-label" *ngIf="!mobileNumber.valid && mobileNumber.touched" style="color: #e85a4f;">Mobile Number is required</label>
+    </div>
+    <div class="mb-2">
+        <label for="dob" class="form-label">Date Of Birth</label>
+        <input type="text" class="form-control" id="dob" placeholder="" formControlName="dob" [ngClass]="{ 'is-invalid' : submitted && dob.errors}">
+        <label class="form-label" *ngIf="!dob.valid && dob.touched" style="color: #e85a4f;">DOB is required</label>
+    </div>
+    
+    <!-- Address-->
+    <div class="row">
+        <div class="mb-2 col">
+            <label for="houseNumber" class="form-label">House Number</label>
+            <input type="text" class="form-control" id="houseNumber" formControlName="houseNumber" [ngClass]="{ 'is-invalid' : submitted && houseNumber.errors}">
+            <label class="form-label" *ngIf="!houseNumber.valid && houseNumber.touched" style="color: #e85a4f;">House Number is required</label>
+        </div> 
+        <div class="mb-2 col">
+            <label for="street" class="form-label">Street</label>
+            <input type="text" class="form-control" id="street" formControlName="street" [ngClass]="{ 'is-invalid' : submitted && street.errors}">
+            <label class="form-label" *ngIf="!street.valid && street.touched" style="color: #e85a4f;">Street is required</label>
+        </div> 
+        
+        <div class="mb-2 col">
+            <label for="area" class="form-label">Area</label>
+            <input type="text" class="form-control" id="area" formControlName="area" [ngClass]="{ 'is-invalid' : submitted && area.errors}">
+            <label class="form-label" *ngIf="!area.valid && area.touched" style="color: #e85a4f;">Area is required</label>
+        </div> 
+    </div>
+    <div class="mb-2">
+        <label for="city" class="form-label">City</label>
+        <input type="text" class="form-control" id="city" formControlName="city" [ngClass]="{ 'is-invalid' : submitted && city.errors}">
+        <label class="form-label" *ngIf="!city.valid && city.touched" style="color: #e85a4f;">City is required</label>
+    </div> 
+    <div class="row">
+        
+        <div class="mb-2 col">
+            <label for="country" class="form-label">Country</label>
+            <input type="text" class="form-control" id="country" formControlName="country" [ngClass]="{ 'is-invalid' : submitted && country.errors}">
+            <label class="form-label" *ngIf="!country.valid && country.touched" style="color: #e85a4f;">Country is required</label>
+        </div> 
+        <div class="mb-2 col">
+            <label for="pinCode" class="form-label">Pin Code</label>
+            <input type="text" class="form-control" id="pincode" formControlName="pincode" [ngClass]="{ 'is-invalid' : submitted && pincode.errors}">
+            <label class="form-label" *ngIf="!pincode.valid && pincode.touched" style="color: #e85a4f;">Pincode is required</label>
+        </div> 
+    </div>
+    
+
+    <!--Password -->
+    <div class="mb-2">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" formControlName="password" [ngClass]="{ 'is-invalid' : submitted && password.errors}">
+        <label class="form-label" *ngIf="!password.valid && password.touched" style="color: #e85a4f;">This field is required</label>
+    </div>  
+    <div class="mb-2">
+        <label for="confirmPassword" class="form-label">Confirm Password</label>
+        <input type="password" class="form-control" id="confirmPassword" formControlName="confirmPassword" [ngClass]="{ 'is-invalid' : submitted && confirmPassword.errors}">
+        <label class="form-label" *ngIf="confirmPassword.hasError('required') && confirmPassword.touched" style="color: #e85a4f;">This field is required</label>
+        <label class="form-label" *ngIf="confirmPassword.hasError('mustMatch')" style="color: #e85a4f;">Passwords must match</label>
+    </div>  
+    <!-- <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" >
+        <label class="form-check-label" for="flexCheckDefault">
+            I accept the terms and conditions
+        </label>
+
+    </div> -->
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary mx-2" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary mx-2">Submit</button>
+    </div>
+</form>
+</div>

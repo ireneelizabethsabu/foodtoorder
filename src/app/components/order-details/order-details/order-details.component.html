@@ -1,0 +1,43 @@
+<div class="d-flex justify-content-center">
+  <div class="card shadow rounded" style="width: 33rem;background-color: #f0f0f0">
+    <div class="card-body">
+        <div class="row">
+            <div class="col m-3">
+                <h5 class="card-title">Order Id : {{orderDetails.id}}</h5>
+                <h5 class="card-title">User Id : {{orderDetails.userid}}</h5>
+            </div>
+            <div class="col">
+                <h6 class="card-subtitle my-3">Date : {{orderDetails.date}}</h6>
+            </div>
+        </div>
+      
+      
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Dish Names</th>
+            <th scope="col">Price</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let d of orderDetails.cart.dishes">
+            <td>{{d.name}}</td>
+           
+            <td>{{d.price}}</td>
+          </tr>
+        </tbody>
+        <tbody>
+            <tr >
+              <th>Order Total</th>
+              <th>{{orderDetails.amount}}</th>
+            </tr>
+          </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+
+

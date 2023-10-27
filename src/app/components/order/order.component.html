@@ -1,0 +1,26 @@
+<div class="m-3" >
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Order Id</th>
+            <th scope="col">User Id</th>
+            <th>Date</th>
+            <th>Amount</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let o of arrOrders;let i = index;">
+            <th scope="row">{{o.id}}</th>
+            <td>{{o.userid}}</td>
+            <td>{{o.date}}</td>
+            <td>{{o.amount}}</td>
+            <td class="d-flex ">
+                <button class="btn btn-dark m-2" (click)="viewOrderById(o.id)">View Details</button>
+                <button class="btn btn-danger m-2" [appConfirmDialog]="o.id" componentName="order">Delete</button>
+            </td>
+           
+        </tr>
+        </tbody>
+    </table>
+</div>

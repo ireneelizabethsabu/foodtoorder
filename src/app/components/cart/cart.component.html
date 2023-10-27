@@ -1,0 +1,24 @@
+<div class="m-3" >
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Cart Id</th>
+            <th scope="col">Cart Amount</th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let c of arrCarts;let i = index;">
+            <td scope="row">{{c.id}}</td>
+            <td>{{c.amount | currency:"INR"}}</td>
+            <td>
+                <button class="btn btn-dark" (click)="viewCartById(c.id)">View Details</button>
+            </td>
+            <td>
+                <button class="btn btn-danger m-2" [appConfirmDialog]="c.id" componentName="cart">Delete</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+  </div>

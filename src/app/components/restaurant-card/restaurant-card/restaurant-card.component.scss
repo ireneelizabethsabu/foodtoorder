@@ -1,0 +1,20 @@
+.img-restaurant-list{
+    width: 300px;
+    height: 200px;
+}
+.image-grayscale{
+    filter: grayscale(100%);
+}
+.btn{
+    width: 120px;
+}
+.btn-dark{
+    border: #182978;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: #182978;
+    
+}
+.btn-dark:hover{
+    background-color: #182a78e1;
+}

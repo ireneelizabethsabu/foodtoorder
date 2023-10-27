@@ -1,0 +1,26 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Dish Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Total Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let d of cartDetails.dishes;let i = index;">
+        <td>{{d.name}}</td>
+        <td>{{d.price}}</td>
+        <td>{{cartDetails.quantity[i]}}</td>
+        <td>{{cartDetails.quantity[i] * d.price}} </td>
+      </tr>
+    </tbody>
+    <tbody>
+        <tr >
+          <th>Cart Total</th>
+          <th></th>
+          <th></th>
+          <th>{{cartDetails.amount}}</th>
+        </tr>
+      </tbody>
+  </table>

@@ -1,0 +1,40 @@
+
+<div class="m-4 row" >
+    <mat-paginator #paginator
+               class="demo-paginator shadow rounded"
+               (page)="handlePageEvent($event)"
+               [length]="length"
+               [pageSize]="pageSize"
+               [disabled]="disabled"
+               [showFirstLastButtons]="showFirstLastButtons"
+               [pageSizeOptions]="showPageSizeOptions ? pageSizeOptions : []"
+               [hidePageSize]="hidePageSize"
+               [pageIndex]="pageIndex"
+               aria-label="Select page">
+    </mat-paginator>
+    <div *ngFor="let u of currentRestaurantsToShow;let i= index;" class="col-lg-4 col-md-6 my-2">
+        <div class="card mb-3 shadow rounded border-0" >
+            <app-restaurant-card [restaurant]="u" [index]="i" (outOfStockEvt)="dishOutOfStock($event)"></app-restaurant-card>
+            <div *ngIf="outOfStock[i] == u.dishes.length" class="text-center p-2 m-2 out-of-stock">
+                Restaurant not available
+            </div>
+            <div *ngIf="outOfStock[i] != u.dishes.length && outOfStock[i] > 0" class="text-center p-2 m-2 out-of-stock">
+                {{outOfStock[i]}} dishes are not available
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="demo-options">
+  
+
+  <div class="demo-toggles">
+    <mat-slide-toggle [(ngModel)]="hidePageSize">Hide page size</mat-slide-toggle>
+    <mat-slide-toggle [(ngModel)]="showPageSizeOptions">Show multiple page size options</mat-slide-toggle>
+    <mat-slide-toggle [(ngModel)]="showFirstLastButtons">Show first/last buttons</mat-slide-toggle>
+    <mat-slide-toggle [(ngModel)]="disabled">Disabled</mat-slide-toggle>
+  </div>
+</div> -->
+
+
+

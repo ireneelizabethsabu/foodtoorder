@@ -1,0 +1,713 @@
+{
+  "restaurants": [
+    {
+      "id": 1,
+      "name": "Thalassery",
+      "restSrc": "../../assets/restaurants/thalassery.jpeg",
+      "addresses": [
+        {
+          "houseNo": 23,
+          "street": "1st Main",
+          "area": "Domlur",
+          "city": "banglore",
+          "state": "Karnataka",
+          "country": "India",
+          "pincode": "568668"
+        },
+        {
+          "houseNo": 25,
+          "street": "19th Main",
+          "area": "Indira nagar",
+          "city": "banglore",
+          "state": "Karnataka",
+          "country": "India",
+          "pincode": "560008"
+        }
+      ],
+      "dishes": [
+        {
+          "name": "Fried rice",
+          "price": 150,
+          "imagesrc": "../../assets/food/fried-rice.webp",
+          "isAvailable": true,
+          "id": 1
+        },
+        {
+          "name": "Hyderabadi Biriyani",
+          "price": 230,
+          "imagesrc": "../../assets/food/hyderabadi-biriyani.jpg",
+          "isAvailable": true,
+          "id": 2
+        }
+      ],
+      "ownerid": 3
+    },
+    {
+      "id": 2,
+      "name": "Empire",
+      "restSrc": "../../assets/restaurants/empire.webp",
+      "addresses": [
+        {
+          "houseNo": 23,
+          "street": "1st Main",
+          "area": "Domlur",
+          "city": "banglore",
+          "state": "Karnataka",
+          "country": "India",
+          "pincode": "568668"
+        }
+      ],
+      "dishes": [
+        {
+          "name": "Idli ",
+          "price": 30,
+          "imagesrc": "../../assets/food/idli.jpg",
+          "isAvailable": true,
+          "id": 1
+        },
+        {
+          "name": "Masala Dosa",
+          "price": 50,
+          "imagesrc": "../../assets/food/masala-dosa.jpeg",
+          "isAvailable": false,
+          "id": 2
+        }
+      ],
+      "ownerid": 2
+    },
+    {
+      "id": 3,
+      "name": "Asha Tiffins",
+      "addresses": [
+        {
+          "houseNo": "204",
+          "street": "aecs layout",
+          "area": "marathahalli",
+          "city": "Banglore",
+          "state": "Karnataka",
+          "country": "India",
+          "pincode": "560027"
+        },
+        {
+          "houseNo": "223",
+          "street": "urr layout",
+          "area": "indira ngr",
+          "city": "Banglore",
+          "state": "Karnataka",
+          "country": "India",
+          "pincode": "565627"
+        }
+      ],
+      "dishes": [
+        {
+          "name": "Mixed Noodles",
+          "price": 180,
+          "imagesrc": "../../assets/idli.webp",
+          "isAvailable": true,
+          "id": 1
+        },
+        {
+          "name": "Shawarma",
+          "price": 120,
+          "imagesrc": "../../assets/idli.webp",
+          "isAvailable": false,
+          "id": 2
+        }
+      ],
+      "restSrc": "../../assets/restaurants/asha-tiffins.jpeg",
+      "ownerid": 3
+    },
+    {
+      "id": 4,
+      "name": "Smoor",
+      "addresses": [
+        {
+          "houseNo": "204",
+          "street": "aecs layout",
+          "area": "marathahalli",
+          "city": "Banglore",
+          "state": "Karnataka",
+          "country": "India",
+          "pincode": "560027"
+        },
+        {
+          "houseNo": "223",
+          "street": "urr layout",
+          "area": "indira ngr",
+          "city": "Banglore",
+          "state": "Karnataka",
+          "country": "India",
+          "pincode": "565627"
+        }
+      ],
+      "dishes": [
+        {
+          "name": "Chocolate Mousse",
+          "price": 180,
+          "imagesrc": "../../assets/food/pastry.jpg",
+          "isAvailable": true,
+          "id": 1
+        },
+        {
+          "name": "Red Velvet Pastry",
+          "price": 200,
+          "imagesrc": "../../assets/food/pastry.jpg",
+          "isAvailable": true,
+          "id": 2
+        },
+        {
+          "name": "Chocolate cake",
+          "price": "140",
+          "imagesrc": "../../assets/food/pastry.jpg",
+          "isAvailable": true,
+          "id": 3
+        }
+      ],
+      "restSrc": "../../assets/restaurants/smoor.jpeg",
+      "ownerid": 3
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Irene Elizabeth",
+      "lastName": "Sabu",
+      "role": "admin",
+      "dob": "23/10/2001",
+      "password": "irene",
+      "email": "irene@gmail.com",
+      "address": {
+        "houseNo": "dvv",
+        "street": "fsd",
+        "area": "banglore",
+        "city": "sdvsdv",
+        "country": "India",
+        "pincode": "323242424"
+      },
+      "mobileNumber": "08384567892"
+    },
+    {
+      "id": 2,
+      "firstName": "John",
+      "lastName": "Xavier",
+      "role": "user",
+      "dob": "03/10/2003",
+      "email": "john@gmail.com",
+      "mobileNumber": "888888888",
+      "password": "john",
+      "address": {
+        "houseNo": 25,
+        "street": "19th Main",
+        "area": "Indira nagar",
+        "city": "banglore",
+        "state": "Karnataka",
+        "country": "India",
+        "pincode": "560008"
+      }
+    },
+    {
+      "id": 3,
+      "firstName": "Jim",
+      "lastName": "Green",
+      "role": "owner",
+      "dob": "23/10/2000",
+      "password": "jim",
+      "email": "jim@gmail.com",
+      "address": {
+        "houseNo": "dvv",
+        "street": "fsd",
+        "area": "banglore",
+        "city": "sdvsdv",
+        "country": "India",
+        "pincode": "323242424"
+      },
+      "mobileNumber": "08384567892"
+    },
+    {
+      "id": 4,
+      "firstName": "Miti",
+      "lastName": "A",
+      "role": "user",
+      "dob": "03/10/2000",
+      "password": "miti@gmail.com",
+      "email": "miti",
+      "address": {
+        "houseNo": "dvv",
+        "street": "fsd",
+        "area": "dfgd",
+        "city": "sdvsdv",
+        "country": "India",
+        "pincode": "123456"
+      },
+      "mobileNumber": "88888888"
+    },
+    {
+      "id": 5,
+      "firstName": "Jamie",
+      "lastName": "Ann",
+      "role": "user",
+      "dob": "03/10/2000",
+      "password": "jamie@gmail.com",
+      "email": "abc",
+      "address": {
+        "houseNo": "dvv",
+        "street": "fsd",
+        "area": "dfgd",
+        "city": "sdvsdv",
+        "country": "India",
+        "pincode": "123456"
+      },
+      "mobileNumber": "9999999999"
+    },
+    {
+      "id": 6,
+      "firstName": "Alby",
+      "lastName": "joseph",
+      "role": "user",
+      "dob": "03/10/2000",
+      "password": "alby",
+      "email": "alby@gmail.com",
+      "address": {
+        "houseNo": "dvv",
+        "street": "fsd",
+        "area": "rfdd",
+        "city": "sdvsdv",
+        "country": "India",
+        "pincode": "598765"
+      },
+      "mobileNumber": "08384567892"
+    },
+    {
+      "id": 7,
+      "firstName": "A",
+      "lastName": "B",
+      "role": "user",
+      "dob": "11/10/2000",
+      "password": "abc",
+      "email": "abc@gmail.com",
+      "address": {
+        "houseNo": "1",
+        "street": "2",
+        "area": "3",
+        "city": "4",
+        "country": "5",
+        "pincode": "6"
+      },
+      "mobileNumber": "9999999999"
+    },
+    {
+      "id": 8,
+      "firstName": "Grace",
+      "lastName": "ms",
+      "role": "user",
+      "dob": "11/05/2005",
+      "password": "gg",
+      "email": "grace@gmail.com",
+      "address": {
+        "houseNo": "dvv",
+        "street": "fsd",
+        "area": "rfdd",
+        "city": "sdvsdv",
+        "country": "India",
+        "pincode": "598765"
+      },
+      "mobileNumber": "6666666666"
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "date": "2023-10-18 01:52",
+      "amount": 910,
+      "userid": 1,
+      "cart": {
+        "id": 1,
+        "dishes": [
+          {
+            "name": "Fried rice",
+            "price": 150,
+            "imagesrc": "../../assets/food3.webp",
+            "isAvailable": true,
+            "id": 1
+          },
+          {
+            "name": "Hyderabadi Biriyani",
+            "price": 230,
+            "imagesrc": "../../assets/food4.jpg",
+            "isAvailable": true,
+            "id": 2
+          }
+        ],
+        "amount": 910,
+        "quantity": [
+          3,
+          2
+        ],
+        "rid": 1
+      }
+    },
+    {
+      "id": 3,
+      "date": "2023-10-18 03:13",
+      "amount": 300,
+      "userid": 1,
+      "cart": {
+        "id": 1,
+        "dishes": [
+          {
+            "name": "Mixed Noodles",
+            "price": 180,
+            "imagesrc": "../../assets/idli.webp",
+            "isAvailable": true,
+            "id": 1
+          },
+          {
+            "name": "Shawarma",
+            "price": 120,
+            "imagesrc": "../../assets/idli.webp",
+            "isAvailable": true,
+            "id": 2
+          }
+        ],
+        "amount": 300,
+        "quantity": [
+          1,
+          1
+        ],
+        "rid": 3
+      }
+    },
+    {
+      "id": 4,
+      "date": "2023-10-26 10:04",
+      "amount": 150,
+      "userid": 4,
+      "cart": {
+        "id": 4,
+        "dishes": [
+          {
+            "name": "Fried rice",
+            "price": 150,
+            "imagesrc": "../../assets/food/fried-rice.webp",
+            "isAvailable": true,
+            "id": 1
+          }
+        ],
+        "amount": 150,
+        "quantity": [
+          1
+        ],
+        "rid": 1
+      }
+    },
+    {
+      "id": 5,
+      "date": "2023-10-26 11:24",
+      "amount": 150,
+      "userid": 1,
+      "cart": {
+        "id": 1,
+        "dishes": [
+          {
+            "name": "Fried rice",
+            "price": 150,
+            "imagesrc": "../../assets/food/fried-rice.webp",
+            "isAvailable": true,
+            "id": 1
+          }
+        ],
+        "amount": 150,
+        "quantity": [
+          1
+        ],
+        "rid": 1
+      }
+    },
+    {
+      "id": 6,
+      "date": "2023-10-26 11:24",
+      "amount": 300,
+      "userid": 1,
+      "cart": {
+        "id": 1,
+        "dishes": [
+          {
+            "name": "Fried rice",
+            "price": 150,
+            "imagesrc": "../../assets/food/fried-rice.webp",
+            "isAvailable": true,
+            "id": 1
+          }
+        ],
+        "amount": 300,
+        "quantity": [
+          2
+        ],
+        "rid": 1
+      }
+    },
+    {
+      "id": 7,
+      "date": "2023-10-26 11:25",
+      "amount": 80,
+      "userid": 1,
+      "cart": {
+        "id": 1,
+        "dishes": [
+          {
+            "name": "Idli ",
+            "price": 30,
+            "imagesrc": "../../assets/food/idli.jpg",
+            "isAvailable": true,
+            "id": 1
+          },
+          {
+            "name": "Masala Dosa",
+            "price": 50,
+            "imagesrc": "../../assets/food/masala-dosa.jpeg",
+            "isAvailable": true,
+            "id": 2
+          }
+        ],
+        "amount": 80,
+        "quantity": [
+          1,
+          1
+        ],
+        "rid": 2
+      }
+    },
+    {
+      "id": 8,
+      "date": "2023-10-26 11:29",
+      "amount": 110,
+      "userid": 1,
+      "cart": {
+        "id": 1,
+        "dishes": [
+          {
+            "name": "Idli ",
+            "price": 30,
+            "imagesrc": "../../assets/food/idli.jpg",
+            "isAvailable": true,
+            "id": 1
+          },
+          {
+            "name": "Masala Dosa",
+            "price": 50,
+            "imagesrc": "../../assets/food/masala-dosa.jpeg",
+            "isAvailable": true,
+            "id": 2
+          }
+        ],
+        "amount": 110,
+        "quantity": [
+          1,
+          1
+        ],
+        "rid": 2
+      }
+    },
+    {
+      "id": 9,
+      "date": "2023-10-26 12:27",
+      "amount": 450,
+      "userid": 5,
+      "cart": {
+        "id": 5,
+        "dishes": [
+          {
+            "name": "Fried rice",
+            "price": 150,
+            "imagesrc": "../../assets/food/fried-rice.webp",
+            "isAvailable": true,
+            "id": 1
+          }
+        ],
+        "amount": 450,
+        "quantity": [
+          3
+        ],
+        "rid": 1
+      }
+    },
+    {
+      "id": 10,
+      "date": "2023-10-26 12:31",
+      "amount": 80,
+      "userid": 5,
+      "cart": {
+        "id": 5,
+        "dishes": [
+          {
+            "name": "Idli ",
+            "price": 30,
+            "imagesrc": "../../assets/food/idli.jpg",
+            "isAvailable": true,
+            "id": 1
+          },
+          {
+            "name": "Masala Dosa",
+            "price": 50,
+            "imagesrc": "../../assets/food/masala-dosa.jpeg",
+            "isAvailable": true,
+            "id": 2
+          }
+        ],
+        "amount": 80,
+        "quantity": [
+          1,
+          1
+        ],
+        "rid": 2
+      }
+    },
+    {
+      "id": 11,
+      "date": "2023-10-26 02:59",
+      "amount": 150,
+      "userid": 8,
+      "cart": {
+        "id": 8,
+        "dishes": [
+          {
+            "name": "Fried rice",
+            "price": 150,
+            "imagesrc": "../../assets/food/fried-rice.webp",
+            "isAvailable": true,
+            "id": 1
+          }
+        ],
+        "amount": 150,
+        "quantity": [
+          1
+        ],
+        "rid": 1
+      }
+    },
+    {
+      "id": 12,
+      "date": "2023-10-26 03:03",
+      "amount": 300,
+      "userid": 8,
+      "cart": {
+        "id": 8,
+        "dishes": [
+          {
+            "name": "Fried rice",
+            "price": 150,
+            "imagesrc": "../../assets/food/fried-rice.webp",
+            "isAvailable": true,
+            "id": 1
+          }
+        ],
+        "amount": 300,
+        "quantity": [
+          2
+        ],
+        "rid": 1
+      }
+    }
+  ],
+  "carts": [
+    {
+      "id": 1,
+      "dishes": [
+        {
+          "name": "Idli ",
+          "price": 30,
+          "imagesrc": "../../assets/food/idli.jpg",
+          "isAvailable": true,
+          "id": 1
+        },
+        {
+          "name": "Masala Dosa",
+          "price": 50,
+          "imagesrc": "../../assets/food/masala-dosa.jpeg",
+          "isAvailable": true,
+          "id": 2
+        }
+      ],
+      "amount": 110,
+      "quantity": [
+        1,
+        1
+      ],
+      "rid": 2
+    },
+    {
+      "id": 3,
+      "dishes": [
+        {
+          "name": "Fried rice",
+          "price": 150,
+          "imagesrc": "../../assets/food3.webp",
+          "isAvailable": true,
+          "id": 1
+        },
+        {
+          "name": "Hyderabadi Biriyani",
+          "price": 230,
+          "imagesrc": "../../assets/food4.jpg",
+          "isAvailable": true,
+          "id": 2
+        }
+      ],
+      "amount": 1140,
+      "quantity": [
+        3,
+        2
+      ],
+      "rid": 1
+    },
+    {
+      "id": 4,
+      "dishes": [
+        {
+          "name": "Fried rice",
+          "price": 150,
+          "imagesrc": "../../assets/food/fried-rice.webp",
+          "isAvailable": true,
+          "id": 1
+        }
+      ],
+      "amount": 300,
+      "quantity": [
+        1
+      ],
+      "rid": 1
+    },
+    {
+      "id": 5,
+      "dishes": [
+        {
+          "name": "Idli ",
+          "price": 30,
+          "imagesrc": "../../assets/food/idli.jpg",
+          "isAvailable": true,
+          "id": 1
+        },
+        {
+          "name": "Masala Dosa",
+          "price": 50,
+          "imagesrc": "../../assets/food/masala-dosa.jpeg",
+          "isAvailable": true,
+          "id": 2
+        }
+      ],
+      "amount": 80,
+      "quantity": [
+        1,
+        1
+      ],
+      "rid": 2
+    },
+    {
+      "id": 8,
+      "dishes": [],
+      "amount": 0,
+      "quantity": [],
+      "rid": 0
+    }
+  ]
+}

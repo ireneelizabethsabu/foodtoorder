@@ -1,0 +1,38 @@
+<div class="row m-5" id="contactus-container">
+    <div class="col-lg-6 p-0">
+        <iframe class="col-md-12 " id="map-frame"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.096522669347!2d77.61138507595247!3d12.965675087349206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1681b488b7af%3A0x8cc6c53d26053814!2sTismo%20Technology%20Solutions!5e0!3m2!1sen!2sin!4v1697085875649!5m2!1sen!2sin"  
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="col-lg-6 my-3 px-5 "> 
+        <h4 class="mb-4">Talk To Us</h4>
+        <div>
+            <form [formGroup] ="feedbackForm" (ngSubmit)="onSubmit(feedbackForm.value)" class="form" >
+                
+                <div class="mb-3 col" >
+                    <input type="text" class="form-control" id="cuname" formControlName="name" placeholder="Name" [ngClass]="{ 'is-invalid' : submitted && name.errors}">
+                    <label class="form-label error-label" *ngIf="!name.valid && name.touched" >Name is required</label>
+                </div> 
+        
+                
+                <div class="mb-3">
+                    <input type="email" class="form-control" id="cuemail" placeholder="Email" formControlName="email" [ngClass]="{ 'is-invalid' : submitted && email.errors}">
+                    <label class="form-label error-label" *ngIf="!email.valid && email.touched" >Email is required</label>
+                </div>
+                <div class="mb-3">
+                    
+                    <input type="text" class="form-control " id="cumobileNumber" placeholder="Mobile Number" formControlName="mobileNumber" [ngClass]="{ 'is-invalid' : submitted && mobileNumber.errors}">
+                    <label class="form-label error-label" *ngIf="!mobileNumber.valid && mobileNumber.touched" >Mobile Number is required</label>
+                </div>
+                <div class="mb-3">
+                    
+                    <textarea class="form-control" id="message" aria-label="With textarea" formControlName="details" placeholder="Message" rows="5" [ngClass]="{ 'is-invalid' : submitted && details.errors}"></textarea>
+                    <label class="form-label error-label" *ngIf="!details.valid && details.touched" >Message is required</label>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-primary" id="btn-custom">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

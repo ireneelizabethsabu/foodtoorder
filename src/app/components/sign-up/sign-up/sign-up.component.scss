@@ -1,0 +1,29 @@
+.modal-title{
+    color: #182978;
+}
+.form-label,.form-check-label{
+    color: #182978;
+}
+.form-control:focus{
+    color: #182978;
+    background-color: #acbfe63f;
+    border-color: #6688CC;
+    outline: 0;
+    box-shadow: none;
+}
+
+.form-control{
+    color: #182978;
+    border-color: #6688CC;
+    background-color: transparent;
+}
+.btn{
+    width: 100px;
+    border: #182978;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: #182978;
+}
+.btn:hover{
+    background-color: #182a78e1;
+}

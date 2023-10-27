@@ -1,0 +1,22 @@
+
+
+<div class="container mx-auto">
+  <div class="row text-center justify-content-center">
+      <div class="col-lg-6 col-12 mb-5">
+          <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://bootstrapious.com/i/snippets/sn-team/teacher-4.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+              <h3 class="mb-0">{{userDetails.firstName}} {{userDetails.lastName}}</h3><span class="small text-uppercase text-muted">{{userDetails.role}}</span>
+            
+            <div class="text-left">
+              <h6 class="m-2">DOB  <p>{{userDetails.dob}} </p></h6>
+              <h6 class="m-2">Email  <p>{{userDetails.email}} </p></h6>
+              <h6 class="m-2">Mobile Number <p>{{userDetails.mobileNumber}} </p></h6>
+              <h6 class="m-2">Password  <p>{{userDetails.password}} </p></h6>
+              <h6 class="m-2">Address  <p>{{userDetails.address.houseNo}}, {{userDetails.address.street}}, 
+                {{userDetails.address.city}}, {{userDetails.address.area}}, {{userDetails.address.state}}, {{userDetails.address.country}}, 
+                {{userDetails.address.pincode}} </p></h6>
+            </div>
+          </div>
+      </div><!-- End -->  
+  </div>
+</div>
+

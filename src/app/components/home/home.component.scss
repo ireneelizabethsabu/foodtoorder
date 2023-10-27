@@ -1,0 +1,90 @@
+.app-name{
+    color: #182978;
+    font-weight: 600;
+    font-size: 3rem;
+}
+.to{
+    color: #182a78b8;
+    font-weight: 700;
+}
+.app-name-sub{
+    color: #182a78b8;
+    font-weight: 400;
+}
+.form-control:focus{
+    color: #182978;
+    background-color: #acbfe63f;
+    border-color: #6688CC;
+    outline: 0;
+    box-shadow: none;
+}
+
+.form-control{
+    color: #182978;
+    border-color: #6688CC;
+    background-color: transparent;
+    
+}
+
+.btn{
+    width: 100px;
+    border: #182978;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: #182978;
+    color: #f0f0f0;
+}
+.btn:hover{
+    background-color: #182a78e1;
+    color: #f0f0f0;
+}
+.menu-div{
+    background-color: #f0f0f0;
+    
+}
+.menu-items{ 
+    padding: 10px;
+}
+.top-picks{
+    background-color: #f0f0f0;
+    color: #182978;
+    margin: 20px;
+}
+
+
+h2 {
+	color: #182978;
+	font-size: 26px;
+	font-weight: 300;
+	text-align: center;
+	position: relative;
+	margin: 20px 20px;
+	text-transform: uppercase;
+}
+
+.carousel {	
+	margin: 0 auto;
+	padding: 0 68px;
+}
+.carousel .carousel-item {
+	text-align: center;
+	overflow: hidden;
+	height: 160px;
+}
+ .img-box {
+	background: #fff;
+	padding: 9px;
+	box-shadow: 0 6px 20px -6px rgba(0,0,0,0.4);
+}
+.carousel .carousel-item img {
+	margin: 0 auto;
+}
+.restname{
+    z-index: 100;
+}
+.btn-feedback{
+    width: 300px;
+    border-radius: 25px;
+    height: 50px;
+    font-size: 20px;
+}

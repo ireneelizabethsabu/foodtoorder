@@ -1,0 +1,13 @@
+
+  <div class="d-flex justify-content-center p-2 ">
+    <img src={{restaurant.restSrc}} class="img-restaurant-list " alt="idli" [ngClass]="{'image-grayscale' : restaurant.dishes.length == count}">
+  </div>
+  <div class="card-body ">
+    <h5 class="card-title text-center">{{restaurant.name}}</h5>
+    <div class="d-flex justify-content-center">
+      <button class="btn btn-dark m-2" (click)="viewDetails(restaurant.id)">View Details</button>
+      
+      <button class="btn btn-danger m-2"  [appConfirmDialog]="restaurant.id" componentName="restaurant">Delete</button>
+    </div>
+  </div>
+ 

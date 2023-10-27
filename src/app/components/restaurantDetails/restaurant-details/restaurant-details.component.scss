@@ -1,0 +1,26 @@
+.grayscale-image{
+    filter: grayscale(100%);
+}
+.r-name,.r-outlets{
+    color: #182978;
+    border-bottom: dashed 1px #6688CC;
+    padding-bottom: 10px;
+}
+.r-dish{
+    color: #182978;
+    padding: 10px 0px;
+    margin-bottom: 15px;
+    background-color: #f0f0f0;
+}
+.card-title{
+    color: #182978;
+}
+.card-img-top,.image-cell{
+    width: 200px;
+}
+.btn-outline-dark{
+    border: solid 2px #182978;
+}
+.btn-outline-dark:hover{
+    background-color:  #182978;
+}

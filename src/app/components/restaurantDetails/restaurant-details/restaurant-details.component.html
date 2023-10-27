@@ -1,0 +1,29 @@
+<div class="container" id="restaurant-details">
+  <!-- <div class="col-lg-6 p-0">
+    <img src={{restaurantDetails.restSrc}} class="card-img-top" alt="idli">
+  </div> -->
+  <div class="my-4 px-5 mx-2" id="restaurant-details-section">
+    <h2 class="r-name">{{restaurantDetails.name}}</h2>
+    <div class="r-outlets">
+      <h5 class="card-title mb-2">Outlets</h5>
+      <div *ngFor="let a of restaurantDetails.addresses;">
+        <p class="card-text"> {{a.street}}, {{a.area}}, {{a.city}}, {{a.state}}, {{a.pincode}}</p>
+      </div>
+    </div>
+    <div >
+      <h5 class="card-title my-3 text-center">- Menu -</h5>
+      <div *ngFor="let r of restaurantDetails.dishes;let i= index;" class="row r-dish">
+        <div class="col">
+          <img src={{r.imagesrc}} class="card-img-top" alt="idli"  [ngClass]="{'grayscale-image' : !r.isAvailable}">
+        </div>
+        <div class="col-lg-6 col">
+          <div><strong> {{r.name}}</strong></div>
+          <div>{{r.price | currency: "INR"}}</div>
+        </div>
+        <div class="col">
+          <button class="btn btn-outline-dark " (click)="addQuantity(r.id,i)" [ngClass]="{'disabled' : !r.isAvailable}" >ADD</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
