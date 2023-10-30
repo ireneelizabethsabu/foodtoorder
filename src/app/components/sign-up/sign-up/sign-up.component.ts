@@ -83,7 +83,7 @@ export class SignUpComponent {
         maxId = user.id
     })
 
-    console.log('you submitted  value: ',value);
+    //console.log('you submitted  value: ',value);
     let id = maxId + 1
     let firstName = this.signUpForm.value.firstName;
     let lastName = this.signUpForm.value.lastName;
@@ -94,16 +94,18 @@ export class SignUpComponent {
     let street = this.signUpForm.value.street;
     let area = this.signUpForm.value.area;
     let city = this.signUpForm.value.city;
-    let state = this.signUpForm.value.state;
+    let state = '';
     let country = this.signUpForm.value.country;
     let pincode = this.signUpForm.value.pincode;
     let password = this.signUpForm.value.password;
     let role = 'user';
 
     
+    let user = new User(id,firstName,lastName,role,dob,email,password,
+      new Address(id,houseNumber,street,area,city,state,country,pincode),mobileNumber)
+      console.log(user)
     this.userService.addUser(
-      new User(id,firstName,lastName,role,dob,email,password,
-        new Address(houseNumber,street,area,city,state,country,pincode),mobileNumber)
+      user
     ).subscribe(data => { 
       
     });

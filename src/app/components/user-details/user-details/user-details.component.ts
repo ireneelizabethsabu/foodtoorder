@@ -11,7 +11,7 @@ import { UserService } from 'src/app/services/user/user.service';
 })
 
 export class UserDetailsComponent {
-  userDetails: User = new User(0,'','','user','','','',new Address(0,"","","","","",""),"")
+  userDetails: User = new User(0,'','','user','','','',new Address(0,0,"","","","","",""),"")
   
   constructor(private activatedRoute: ActivatedRoute, private userService: UserService)
   {

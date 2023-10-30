@@ -38,6 +38,7 @@ export class BannerComponent {
     // if(this.signInForm.invalid)
     //   return;
     //console.log(this.fc['email'].value,this.fc['password'].value)
+    console.log(this.arrUsers)
     for(let i=0; i<this.arrUsers.length; i++){
       console.log(this.fc['email'].value,this.arrUsers[i].email)
       if(this.arrUsers[i].email == this.fc['email'].value && this.arrUsers[i].password == this.fc['password'].value){

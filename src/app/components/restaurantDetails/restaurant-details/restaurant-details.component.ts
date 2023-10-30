@@ -16,7 +16,7 @@ import { UserService } from 'src/app/services/user/user.service';
 
 export class RestaurantDetailsComponent {
   restaurantDetails: Restaurant = new Restaurant(0,'',[],[],'',0)
-  ownerDetails: User = new User(0,'','','user','','','',new Address(0,"","","","","",""),"")
+  ownerDetails: User = new User(0,'','','user','','','',new Address(0,0,"","","","","",""),"")
   cartData: Cart = new Cart(0,[],0,[],0)
   
   constructor(private activatedRoute: ActivatedRoute, 
@@ -24,9 +24,10 @@ export class RestaurantDetailsComponent {
     private userService: UserService,private cartService: CartService ){
       this.activatedRoute.params.subscribe((params: Params) => {
         let id = params['rid']
-        restaurantService.getRestaurantById(id).subscribe(data => [
+        restaurantService.getRestaurantById(id).subscribe(data => {
           this.restaurantDetails = data
-        ])
+          console.log(this.restaurantDetails)
+      })
         //this.ownerDetails = userService.getUserById(this.restaurantDetails.ownerid )
         let cid = localStorage.getItem("id")
         this.cartService.getCartById(parseInt(cid + "")).subscribe(data => {

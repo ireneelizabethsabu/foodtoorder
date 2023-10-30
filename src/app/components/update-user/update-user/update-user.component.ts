@@ -14,7 +14,8 @@ export class UpdateUserComponent {
   submitted: boolean = false
   arrUsers: User[] = []
   idUpdated: number = -1
-  user: User = new User(0,'','','user','','','',new Address(0,"","","","","",""),"")
+  user: User = new User(0,'','','user','','','',new Address(0,0,"","","","","",""),"")
+  aid: number = 0
 
   firstName: AbstractControl
   lastName: AbstractControl
@@ -29,7 +30,7 @@ export class UpdateUserComponent {
   country: AbstractControl
   pincode: AbstractControl
   password: AbstractControl
-  
+  role: AbstractControl
   
 
   constructor(private fb: FormBuilder,private userService: UserService){
@@ -40,7 +41,7 @@ export class UpdateUserComponent {
       'email': ["", Validators.required],
       'mobileNumber': ["", Validators.required],
       'dob': ["", Validators.required],
-      'role': ["",Validators.required],
+      
       'houseNumber': ["", Validators.required],
       'street': ["", Validators.required],
       'area': ["", Validators.required],
@@ -48,11 +49,12 @@ export class UpdateUserComponent {
       'country': ["", Validators.required],
       'pincode': ["", Validators.required],
       'password': ["",Validators.required],
-      
+      'role': ["user"]
       
     })
     userService.getUsers().subscribe(data => {
       this.arrUsers = data;
+      console.log(data)
     })
     this.firstName = this.userForm.controls['firstName']
     this.lastName = this.userForm.controls['lastName']
@@ -67,7 +69,7 @@ export class UpdateUserComponent {
     this.country = this.userForm.controls['country']
     this.pincode = this.userForm.controls['pincode']
     this.password = this.userForm.controls['password']
-    
+    this.role = this.userForm.controls['role']
     
   }
 
@@ -78,6 +80,7 @@ export class UpdateUserComponent {
     
     this.userService.getUserById(this.idUpdated).subscribe(data => {
       this.user = data;
+      this.aid = this.user.address.id
       this.userForm.get('firstName')?.setValue(this.user.firstName)
       this.userForm.get('lastName')?.setValue(this.user.lastName)
       this.userForm.get('email')?.setValue(this.user.email)
@@ -91,7 +94,7 @@ export class UpdateUserComponent {
       this.userForm.get('state')?.setValue(this.user.address.state)
       this.userForm.get('country')?.setValue(this.user.address.country)
       this.userForm.get('password')?.setValue(this.user.password)
-      
+      this.userForm.get('role')?.setValue(this.user.role)
     })
   }
 
@@ -114,11 +117,12 @@ export class UpdateUserComponent {
       let country = this.userForm.value.country;
       let pincode = this.userForm.value.pincode;
       let password = this.userForm.value.password;
-      let role = 'user';
-      
+      let role = this.userForm.value.role;
+      console.log(role)
    
       this.userService.updateUser(new User(this.idUpdated,firstName,lastName,role,dob,email,password,
-        new Address(houseNumber,street,area,city,state,country,pincode),mobileNumber)).subscribe(data => {})
+        new Address(this.aid,houseNumber,street,area,city,state,country,pincode),mobileNumber)).subscribe(data => {})
+        location.reload()
   }
 
   onClear(){
@@ -129,7 +133,7 @@ export class UpdateUserComponent {
       'email': ["", Validators.required],
       'mobileNumber': ["", Validators.required],
       'dob': ["", Validators.required],
-      'role': ["",Validators.required],
+      'role': ["user"],
       'houseNumber': ["", Validators.required],
       'street': ["", Validators.required],
       'area': ["", Validators.required],
