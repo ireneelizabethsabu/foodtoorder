@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Form, FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Address } from 'src/app/models/address';
 import { Dish } from 'src/app/models/dish';
 import { Restaurant } from 'src/app/models/restaurant';
@@ -57,6 +57,7 @@ export class UpdateRestaurantComponent {
   }
 
   saveFirstStepData(formdata: FormGroup){
+    console.log(this.restaurant.id)
     this.restaurant.name = formdata.value['rName']
     this.restaurant.restSrc  = formdata.value['rImgPath']
     console.log('you submitted  value first step: ',this.restaurant);
@@ -67,7 +68,7 @@ export class UpdateRestaurantComponent {
     
     this.countSecondFormSubmit++;
     if (this.countSecondFormSubmit == this.count) {
-      console.log("hiii")
+      //console.log("hiii")
       // this.addresses=Object.values(formdata);
       // console.log(formdata);
       let adressArr = Object.values(formdata);
@@ -89,16 +90,17 @@ export class UpdateRestaurantComponent {
       
       let dishArr = Object.values(formdata);
       this.dishes = dishArr;
-                    
+      console.log(this.dishes)             
       let temp = JSON.parse(JSON.stringify(this.dishes));
+      console.log(temp[0]);
       this.restaurant.dishes = temp[0];
       
       console.log(this.restaurant.dishes);
-      this.restaurant.dishes.forEach((dish,index) => {
+      // this.restaurant.dishes.forEach((dish,index) => {
         
-        dish.id = index + 1;
-      });
-      //console.log(this.restaurant)
+      //   dish. = index + 1;
+      // });
+      console.log(JSON.stringify(this.restaurant))
       
       this.restaurantservice.updateRestaurant(this.restaurant).subscribe(data => {})
       
@@ -116,6 +118,7 @@ export class UpdateRestaurantComponent {
   private createAddressFormGroup() : FormGroup{
     this.count++
     return new FormGroup({
+      'id': new FormControl(0),
       'houseNo': new FormControl('',Validators.required),
       'street': new FormControl('',Validators.required),
       'area': new FormControl('',Validators.required),
@@ -146,6 +149,7 @@ export class UpdateRestaurantComponent {
   private createDishFormGroup() : FormGroup{
     this.dishcount++
     return new FormGroup({
+      'id': new FormControl(0),
       'name': new FormControl('',Validators.required),
       'price': new FormControl('',Validators.required),
       'imagesrc': new FormControl('',Validators.required),
@@ -165,6 +169,7 @@ export class UpdateRestaurantComponent {
 
   public addDishFormGroup() {
     const form_array_dishes= this.dishesForm.get('form_array_dishes') as FormArray
+    console.log(form_array_dishes)
     form_array_dishes.push(this.createDishFormGroup())
   }  
 
@@ -186,6 +191,7 @@ export class UpdateRestaurantComponent {
       this.restaurant.addresses.forEach(element => {
         this.countSecondFormSubmit++;
         let addform = this.createAddressFormGroup()
+        addform.get('id')?.setValue(element.id)
         addform.get('houseNo')?.setValue(element.houseNo)
         addform.get('street')?.setValue(element.street)
         addform.get('area')?.setValue(element.area)
@@ -200,12 +206,15 @@ export class UpdateRestaurantComponent {
       this.restaurant.dishes.forEach(element => {
         this.countThirdFormSubmit++;
         let dform = this.createDishFormGroup()
+        
+        dform.get('id')?.setValue(element.id)
         dform.get('name')?.setValue(element.name)
         dform.get('price')?.setValue(element.price)
         dform.get('imagesrc')?.setValue(element.imagesrc)
         dform.get('isAvailable')?.setValue(element.isAvailable)
         const form_array_dishes= this.dishesForm.get('form_array_dishes') as FormArray
         form_array_dishes.push(dform)
+        console.log(form_array_dishes as FormArray)
       });
       this.countThirdFormSubmit--;
     })
