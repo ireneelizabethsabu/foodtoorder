@@ -75,7 +75,7 @@ export class SignUpComponent {
   onSubmit(value: string): void{
     this.submitted = true
     if(this.signUpForm.invalid){
-      console.log(this.signUpForm)
+      console.log("hi",this.signUpForm)
       return;
     }
 
@@ -105,11 +105,11 @@ export class SignUpComponent {
     
     let user = new User(id,firstName,lastName,role,dob,email,password,
       new Address(id,houseNumber,street,area,city,state,country,pincode),mobileNumber)
-      console.log(user)
+      
     this.userService.addUser(
       user
     ).subscribe(data => { 
-      
+      console.log(data)
       let cart = new Cart(parseInt(data.id + ""),[],0,[],0)
       this.cartService.addCart(cart).subscribe(data => { console.log("Added new cart")})
     });

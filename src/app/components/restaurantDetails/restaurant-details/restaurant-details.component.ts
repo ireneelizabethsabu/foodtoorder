@@ -68,13 +68,13 @@ export class RestaurantDetailsComponent {
       this.cartData.amount = 0
       this.cartData.dishes = []
       this.cartData.quantity = []
-      
-      
 
       this.cartData.dishes.push(this.restaurantDetails.dishes[index])
       this.cartData.quantity.push(1)
       this.cartData.amount = this.getTotalCartAmount()
-      this.cartService.updateCart(this.cartData).subscribe(data => {})
+      this.cartService.updateCart(this.cartData).subscribe(data => {
+        console.log(data)
+      })
 
     }    
     

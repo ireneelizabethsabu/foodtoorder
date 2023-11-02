@@ -41,7 +41,7 @@ export class BannerComponent {
     console.log(this.arrUsers)
     for(let i=0; i<this.arrUsers.length; i++){
       console.log(this.fc['email'].value,this.arrUsers[i].email)
-      if(this.arrUsers[i].email == this.fc['email'].value && this.arrUsers[i].password == this.fc['password'].value){
+      if(this.arrUsers[i].email.toLowerCase() == this.fc['email'].value.toLowerCase() && this.arrUsers[i].password == this.fc['password'].value){
           console.log(this.arrUsers[i])
           localStorage.setItem("role",this.arrUsers[i].role);
           localStorage.setItem("id",this.arrUsers[i].id.toString());
@@ -52,9 +52,11 @@ export class BannerComponent {
 
   loadCurrentCart(){
     let id = localStorage.getItem("id")
+    
     this.cartService.getCartById(parseInt(id + "")).subscribe(data => {
 
       this.currCart = data
+      console.log(data)
      }
      ,
     error => {

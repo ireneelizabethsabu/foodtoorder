@@ -63,10 +63,20 @@ export class CurrentCartComponent {
   }
 
   clearCart(){
-    this.cartData.dishes.splice(0,this.cartData.dishes.length)
-    this.cartData.quantity.splice(0,this.cartData.quantity.length)
-    this.cartData.amount = 0
-    this.cartData.rid = 0
-    this.cartService.updateCart(this.cartData).subscribe(data => {})
+    // this.cartData.dishes.splice(0,this.cartData.dishes.length)
+    // this.cartData.quantity.splice(0,this.cartData.quantity.length)
+    // this.cartData.amount = 0
+    // this.cartData.rid = 0
+    // this.cartService.updateCart(this.cartData).subscribe(data => {})
+    let id = this.cartData.id;
+    
+    this.cartService.deleteCart(id).subscribe(data => {
+      
+      let cart = new Cart(parseInt(id + ""),[],0,[],0)
+      console.log(cart.id)
+      this.cartService.addCart(cart).subscribe(data => { console.log("Added new cart")})
+    })
+    
+    //location.reload()
   }
 }
