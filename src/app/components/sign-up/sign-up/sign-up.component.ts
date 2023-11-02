@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MustMatch } from 'src/app/helpers/passwordValidator';
 import { Address } from 'src/app/models/address';
+import { Cart } from 'src/app/models/cart';
 import { User } from 'src/app/models/user';
+import { CartService } from 'src/app/services/cart/cart.service';
 import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
@@ -30,7 +32,7 @@ export class SignUpComponent {
   password: AbstractControl
   confirmPassword: AbstractControl
   
-  constructor(private fb: FormBuilder,private userService: UserService){
+  constructor(private fb: FormBuilder,private userService: UserService,private cartService:  CartService){
     this.signUpForm = fb.group({
       'firstName': ["", Validators.required],
       'lastName': ["",  Validators.required],
@@ -108,9 +110,9 @@ export class SignUpComponent {
       user
     ).subscribe(data => { 
       
+      let cart = new Cart(parseInt(data.id + ""),[],0,[],0)
+      this.cartService.addCart(cart).subscribe(data => { console.log("Added new cart")})
     });
     location.reload()
-  }
-
-  
+  }  
 }

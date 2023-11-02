@@ -64,10 +64,12 @@ export class RestaurantDetailsComponent {
         this.cartService.updateCart(this.cartData).subscribe(data => {})
       }
     }else{
-      this.cartData.dishes.splice(0,this.cartData.dishes.length)
-      this.cartData.quantity.splice(0,this.cartData.quantity.length)
-      this.cartData.amount = 0
       this.cartData.rid = this.restaurantDetails.id
+      this.cartData.amount = 0
+      this.cartData.dishes = []
+      this.cartData.quantity = []
+      
+      
 
       this.cartData.dishes.push(this.restaurantDetails.dishes[index])
       this.cartData.quantity.push(1)

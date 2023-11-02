@@ -209,7 +209,7 @@ export class UpdateRestaurantComponent {
         
         dform.get('id')?.setValue(element.id)
         dform.get('name')?.setValue(element.name)
-        dform.get('price')?.setValue(element.price)
+        dform.get('price')?.setValue(parseInt(element.price + ''))
         dform.get('imagesrc')?.setValue(element.imagesrc)
         dform.get('isAvailable')?.setValue(element.isAvailable)
         const form_array_dishes= this.dishesForm.get('form_array_dishes') as FormArray

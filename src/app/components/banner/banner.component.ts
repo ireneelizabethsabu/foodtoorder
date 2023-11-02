@@ -55,7 +55,8 @@ export class BannerComponent {
     this.cartService.getCartById(parseInt(id + "")).subscribe(data => {
 
       this.currCart = data
-    },
+     }
+     ,
     error => {
       let cart = new Cart(parseInt(id + ""),[],0,[],0)
       this.cartService.addCart(cart).subscribe(data => { console.log("Added new cart")})
